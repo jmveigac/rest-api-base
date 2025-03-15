@@ -1,0 +1,36 @@
+@rest_api_base_HostAddress = http://localhost:5063
+
+GET {{rest_api_base_HostAddress}}/pizza/
+Accept: application/json
+
+###
+
+GET {{rest_api_base_HostAddress}}/pizza/1
+Accept: application/json
+
+###
+
+POST {{rest_api_base_HostAddress}}/pizza/
+Content-Type: application/json
+
+{
+    "name": "Hawaii",
+    "isGlutenFree": false
+}
+
+###
+
+PUT {{rest_api_base_HostAddress}}/pizza/3
+Content-Type: application/json
+
+{
+    "id": 3,
+    "name": "Hawaiian",
+    "isGlutenFree": false
+}
+
+###
+
+DELETE {{rest_api_base_HostAddress}}/pizza/3
+
+###
