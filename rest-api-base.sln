@@ -4,6 +4,8 @@ VisualStudioVersion = 17.5.2.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rest-api-base", "rest-api-base.csproj", "{6537C079-C30C-F286-5ADE-CC755E7F20B2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rest-api-base.Tests", "tests\rest-api-base.Tests\rest-api-base.Tests.csproj", "{B2A9F6C7-8798-4A29-B0D1-E0EAD8F00B21}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -14,6 +16,10 @@ Global
 		{6537C079-C30C-F286-5ADE-CC755E7F20B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6537C079-C30C-F286-5ADE-CC755E7F20B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6537C079-C30C-F286-5ADE-CC755E7F20B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2A9F6C7-8798-4A29-B0D1-E0EAD8F00B21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2A9F6C7-8798-4A29-B0D1-E0EAD8F00B21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2A9F6C7-8798-4A29-B0D1-E0EAD8F00B21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2A9F6C7-8798-4A29-B0D1-E0EAD8F00B21}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

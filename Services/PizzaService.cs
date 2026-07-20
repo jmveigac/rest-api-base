@@ -2,42 +2,70 @@ using rest_api_base.Models;
 
 namespace rest_api_base.Services;
 
-public static class PizzaService
+public sealed class PizzaService : IPizzaService
 {
-    static List<Pizza> Pizzas { get; }
-    static int nextId = 3;
+    private readonly object sync = new();
+    private readonly List<Pizza> pizzas =
+    [
+        new Pizza(1, "Classic Italian", false),
+        new Pizza(2, "Veggie", true),
+    ];
 
-    static PizzaService()
+    private int nextId = 3;
+
+    public IReadOnlyList<Pizza> GetAll()
     {
-        Pizzas = [
-            new Pizza { Id = 1, Name = "Classic Italian", IsGlutenFree = false },
-            new Pizza { Id = 2, Name = "Veggie", IsGlutenFree = true }
-        ];
+        lock (sync)
+        {
+            return pizzas.ToArray();
+        }
     }
 
-    public static List<Pizza> GetAll() => Pizzas;
-
-    public static Pizza? Get(int id) => Pizzas.FirstOrDefault(p => p.Id == id);
-
-    public static void Add(Pizza pizza)
+    public Pizza? Get(int id)
     {
-        pizza.Id = nextId++;
-        Pizzas.Add(pizza);
+        lock (sync)
+        {
+            return pizzas.FirstOrDefault(pizza => pizza.Id == id);
+        }
     }
 
-    public static void Delete(int id)
+    public Pizza Add(PizzaCreateRequest request)
     {
-        var pizza = Get(id);
-        if (pizza is null) return;
-
-        Pizzas.Remove(pizza);
+        lock (sync)
+        {
+            var pizza = new Pizza(nextId++, request.Name, request.IsGlutenFree);
+            pizzas.Add(pizza);
+            return pizza;
+        }
     }
 
-    public static void Update(Pizza pizza)
+    public bool Update(int id, PizzaUpdateRequest request)
     {
-        var index = Pizzas.FindIndex(p => p.Id == pizza.Id);
-        if (index == -1) return;
+        lock (sync)
+        {
+            var index = pizzas.FindIndex(pizza => pizza.Id == id);
+            if (index < 0)
+            {
+                return false;
+            }
 
-        Pizzas[index] = pizza;
+            pizzas[index] = new Pizza(id, request.Name, request.IsGlutenFree);
+            return true;
+        }
+    }
+
+    public bool Delete(int id)
+    {
+        lock (sync)
+        {
+            var index = pizzas.FindIndex(pizza => pizza.Id == id);
+            if (index < 0)
+            {
+                return false;
+            }
+
+            pizzas.RemoveAt(index);
+            return true;
+        }
     }
 }
