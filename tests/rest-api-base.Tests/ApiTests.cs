@@ -3,7 +3,6 @@ using System.Net.Http.Json;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using rest_api_base.Models;
-using Xunit;
 
 namespace rest_api_base.Tests;
 
