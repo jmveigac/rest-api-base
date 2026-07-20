@@ -36,7 +36,7 @@ Run the same quality gates used by CI:
 dotnet restore rest-api-base.sln
 dotnet format rest-api-base.sln --verify-no-changes --no-restore
 dotnet build rest-api-base.sln --configuration Release --no-restore --warnaserror
-dotnet test tests/rest-api-base.Tests/rest-api-base.Tests.csproj --configuration Release --no-restore
+dotnet test --project tests/rest-api-base.Tests/rest-api-base.Tests.csproj --configuration Release --no-restore
 ```
 
 Review NuGet packages with:
