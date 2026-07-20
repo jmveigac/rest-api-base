@@ -13,8 +13,9 @@ public sealed class ApiTests
     {
         using var factory = CreateFactory();
         using var client = CreateClient(factory);
+        var cancellationToken = TestContext.Current.CancellationToken;
 
-        var response = await client.GetAsync("/health");
+        var response = await client.GetAsync("/health", cancellationToken);
 
         Assert.Equal(HttpStatusCode.OK, response.StatusCode);
     }
@@ -24,8 +25,9 @@ public sealed class ApiTests
     {
         using var factory = CreateFactory();
         using var client = CreateClient(factory);
+        var cancellationToken = TestContext.Current.CancellationToken;
 
-        var pizza = await client.GetFromJsonAsync<Pizza>("/Pizza/1");
+        var pizza = await client.GetFromJsonAsync<Pizza>("/Pizza/1", cancellationToken);
 
         Assert.NotNull(pizza);
         Assert.Equal(1, pizza.Id);
@@ -37,31 +39,43 @@ public sealed class ApiTests
     {
         using var factory = CreateFactory();
         using var client = CreateClient(factory);
+        var cancellationToken = TestContext.Current.CancellationToken;
 
         var createResponse = await client.PostAsJsonAsync(
             "/Pizza",
-            new PizzaCreateRequest("Hawaii", false)
+            new PizzaCreateRequest("Hawaii", false),
+            cancellationToken
         );
         Assert.Equal(HttpStatusCode.Created, createResponse.StatusCode);
 
-        var createdPizza = await createResponse.Content.ReadFromJsonAsync<Pizza>();
+        var createdPizza = await createResponse.Content.ReadFromJsonAsync<Pizza>(cancellationToken);
         Assert.NotNull(createdPizza);
         Assert.True(createdPizza.Id > 0);
 
         var updateResponse = await client.PutAsJsonAsync(
             $"/Pizza/{createdPizza.Id}",
-            new PizzaUpdateRequest("Hawaiian", false)
+            new PizzaUpdateRequest("Hawaiian", false),
+            cancellationToken
         );
         Assert.Equal(HttpStatusCode.NoContent, updateResponse.StatusCode);
 
-        var updatedPizza = await client.GetFromJsonAsync<Pizza>($"/Pizza/{createdPizza.Id}");
+        var updatedPizza = await client.GetFromJsonAsync<Pizza>(
+            $"/Pizza/{createdPizza.Id}",
+            cancellationToken
+        );
         Assert.NotNull(updatedPizza);
         Assert.Equal("Hawaiian", updatedPizza.Name);
 
-        var deleteResponse = await client.DeleteAsync($"/Pizza/{createdPizza.Id}");
+        var deleteResponse = await client.DeleteAsync(
+            $"/Pizza/{createdPizza.Id}",
+            cancellationToken
+        );
         Assert.Equal(HttpStatusCode.NoContent, deleteResponse.StatusCode);
 
-        var missingResponse = await client.GetAsync($"/Pizza/{createdPizza.Id}");
+        var missingResponse = await client.GetAsync(
+            $"/Pizza/{createdPizza.Id}",
+            cancellationToken
+        );
         Assert.Equal(HttpStatusCode.NotFound, missingResponse.StatusCode);
     }
 
@@ -70,8 +84,9 @@ public sealed class ApiTests
     {
         using var factory = CreateFactory();
         using var client = CreateClient(factory);
+        var cancellationToken = TestContext.Current.CancellationToken;
 
-        var response = await client.GetAsync("/swagger/index.html");
+        var response = await client.GetAsync("/swagger/index.html", cancellationToken);
 
         Assert.Equal(HttpStatusCode.OK, response.StatusCode);
     }
