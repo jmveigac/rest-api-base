@@ -1,92 +1,17 @@
-/home/runner/work/rest-api-base/rest-api-base/tests/rest-api-base.Tests/ApiTests.cs(17,30): warning xUnit1051: Calls to methods which accept CancellationToken should use TestContext.Current.CancellationToken to allow test cancellation to be more responsive. (https://xunit.net/xunit.analyzers/rules/xUnit1051) [/home/runner/work/rest-api-base/rest-api-base/tests/rest-api-base.Tests/rest-api-base.Tests.csproj]
-/home/runner/work/rest-api-base/rest-api-base/tests/rest-api-base.Tests/ApiTests.cs(74,30): warning xUnit1051: Calls to methods which accept CancellationToken should use TestContext.Current.CancellationToken to allow test cancellation to be more responsive. (https://xunit.net/xunit.analyzers/rules/xUnit1051) [/home/runner/work/rest-api-base/rest-api-base/tests/rest-api-base.Tests/rest-api-base.Tests.csproj]
-/home/runner/work/rest-api-base/rest-api-base/tests/rest-api-base.Tests/ApiTests.cs(41,36): warning xUnit1051: Calls to methods which accept CancellationToken should use TestContext.Current.CancellationToken to allow test cancellation to be more responsive. (https://xunit.net/xunit.analyzers/rules/xUnit1051) [/home/runner/work/rest-api-base/rest-api-base/tests/rest-api-base.Tests/rest-api-base.Tests.csproj]
-/home/runner/work/rest-api-base/rest-api-base/tests/rest-api-base.Tests/ApiTests.cs(47,34): warning xUnit1051: Calls to methods which accept CancellationToken should use TestContext.Current.CancellationToken to allow test cancellation to be more responsive. (https://xunit.net/xunit.analyzers/rules/xUnit1051) [/home/runner/work/rest-api-base/rest-api-base/tests/rest-api-base.Tests/rest-api-base.Tests.csproj]
-/home/runner/work/rest-api-base/rest-api-base/tests/rest-api-base.Tests/ApiTests.cs(51,36): warning xUnit1051: Calls to methods which accept CancellationToken should use TestContext.Current.CancellationToken to allow test cancellation to be more responsive. (https://xunit.net/xunit.analyzers/rules/xUnit1051) [/home/runner/work/rest-api-base/rest-api-base/tests/rest-api-base.Tests/rest-api-base.Tests.csproj]
-/home/runner/work/rest-api-base/rest-api-base/tests/rest-api-base.Tests/ApiTests.cs(57,34): warning xUnit1051: Calls to methods which accept CancellationToken should use TestContext.Current.CancellationToken to allow test cancellation to be more responsive. (https://xunit.net/xunit.analyzers/rules/xUnit1051) [/home/runner/work/rest-api-base/rest-api-base/tests/rest-api-base.Tests/rest-api-base.Tests.csproj]
-/home/runner/work/rest-api-base/rest-api-base/tests/rest-api-base.Tests/ApiTests.cs(61,36): warning xUnit1051: Calls to methods which accept CancellationToken should use TestContext.Current.CancellationToken to allow test cancellation to be more responsive. (https://xunit.net/xunit.analyzers/rules/xUnit1051) [/home/runner/work/rest-api-base/rest-api-base/tests/rest-api-base.Tests/rest-api-base.Tests.csproj]
-/home/runner/work/rest-api-base/rest-api-base/tests/rest-api-base.Tests/ApiTests.cs(64,37): warning xUnit1051: Calls to methods which accept CancellationToken should use TestContext.Current.CancellationToken to allow test cancellation to be more responsive. (https://xunit.net/xunit.analyzers/rules/xUnit1051) [/home/runner/work/rest-api-base/rest-api-base/tests/rest-api-base.Tests/rest-api-base.Tests.csproj]
-/home/runner/work/rest-api-base/rest-api-base/tests/rest-api-base.Tests/ApiTests.cs(28,27): warning xUnit1051: Calls to methods which accept CancellationToken should use TestContext.Current.CancellationToken to allow test cancellation to be more responsive. (https://xunit.net/xunit.analyzers/rules/xUnit1051) [/home/runner/work/rest-api-base/rest-api-base/tests/rest-api-base.Tests/rest-api-base.Tests.csproj]
 Running tests from /home/runner/work/rest-api-base/rest-api-base/tests/rest-api-base.Tests/bin/Release/net10.0/rest-api-base.Tests.dll (net10.0|x64)
-[32mpassed[m rest_api_base.Tests.ApiTests.HealthEndpoint_ReturnsOk [90m(386ms)[m
+[32mpassed[m rest_api_base.Tests.ApiTests.HealthEndpoint_ReturnsOk [90m(375ms)[m
   from /home/runner/work/rest-api-base/rest-api-base/tests/rest-api-base.Tests/bin/Release/net10.0/rest-api-base.Tests.dll (net10.0|x64)
-[32mpassed[m rest_api_base.Tests.ApiTests.SamplePizzaEndpoint_ReturnsSeededPizza [90m(117ms)[m
+[32mpassed[m rest_api_base.Tests.ApiTests.SamplePizzaEndpoint_ReturnsSeededPizza [90m(106ms)[m
   from /home/runner/work/rest-api-base/rest-api-base/tests/rest-api-base.Tests/bin/Release/net10.0/rest-api-base.Tests.dll (net10.0|x64)
-[31mfailed[m rest_api_base.Tests.ApiTests.PizzaEndpoints_SupportCrudFlow [90m(57ms)[m
-  Assert.Equal() Failure: Values differ
-Expected: Created
-Actual:   InternalServerError
+[32mpassed[m rest_api_base.Tests.ApiTests.PizzaEndpoints_SupportCrudFlow [90m(74ms)[m
   from /home/runner/work/rest-api-base/rest-api-base/tests/rest-api-base.Tests/bin/Release/net10.0/rest-api-base.Tests.dll (net10.0|x64)
-[31m  Assert.Equal() Failure: Values differ
-  Expected: Created
-  Actual:   InternalServerError
-[m[90m    at rest_api_base.Tests.ApiTests.PizzaEndpoints_SupportCrudFlow() in /home/runner/work/rest-api-base/rest-api-base/tests/rest-api-base.Tests/ApiTests.cs:45[90m
-    --- End of stack trace from previous location ---
-[m[32mpassed[m rest_api_base.Tests.ApiTests.SwaggerEndpoint_IsAvailableInDevelopment [90m(72ms)[m
+[32mpassed[m rest_api_base.Tests.ApiTests.SwaggerEndpoint_IsAvailableInDevelopment [90m(80ms)[m
   from /home/runner/work/rest-api-base/rest-api-base/tests/rest-api-base.Tests/bin/Release/net10.0/rest-api-base.Tests.dll (net10.0|x64)
-[m/home/runner/work/rest-api-base/rest-api-base/tests/rest-api-base.Tests/bin/Release/net10.0/rest-api-base.Tests.dll (net10.0|x64) [31mfailed with 1 error(s)[m [90m(1s 055ms)[m
-Exit code: 2
-  Standard output: info: Microsoft.Hosting.Lifetime[0]
-        Application started. Press Ctrl+C to shut down.
-  info: Microsoft.Hosting.Lifetime[0]
-        Hosting environment: Development
-  info: Microsoft.Hosting.Lifetime[0]
-        Content root path: /home/runner/work/rest-api-base/rest-api-base
-  info: Microsoft.Hosting.Lifetime[0]
-        Application is shutting down...
-  info: Microsoft.Hosting.Lifetime[0]
-        Application started. Press Ctrl+C to shut down.
-  info: Microsoft.Hosting.Lifetime[0]
-        Hosting environment: Development
-  info: Microsoft.Hosting.Lifetime[0]
-        Content root path: /home/runner/work/rest-api-base/rest-api-base
-  info: Microsoft.Hosting.Lifetime[0]
-        Application is shutting down...
-  info: Microsoft.Hosting.Lifetime[0]
-        Application started. Press Ctrl+C to shut down.
-  info: Microsoft.Hosting.Lifetime[0]
-        Hosting environment: Development
-  info: Microsoft.Hosting.Lifetime[0]
-        Content root path: /home/runner/work/rest-api-base/rest-api-base
-  fail: Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware[1]
-        An unhandled exception has occurred while executing the request.
-        System.InvalidOperationException: Record type 'rest_api_base.Models.PizzaCreateRequest' has validation metadata defined on property 'Name' that will be ignored. 'Name' is a parameter in the record primary constructor and validation metadata must be associated with the constructor parameter.
-           at Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata.ThrowIfRecordTypeHasValidationOnProperties()
-           at Microsoft.AspNetCore.Mvc.ModelBinding.Validation.DefaultComplexObjectValidationStrategy.Enumerator..ctor(ModelMetadata modelMetadata, String key, Object model)
-           at Microsoft.AspNetCore.Mvc.ModelBinding.Validation.DefaultComplexObjectValidationStrategy.GetChildren(ModelMetadata metadata, String key, Object model)
-           at Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationVisitor.VisitChildren(IValidationStrategy strategy)
-           at Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationVisitor.VisitComplexType(IValidationStrategy defaultStrategy)
-           at Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationVisitor.VisitImplementation(ModelMetadata& metadata, String& key, Object model)
-           at Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationVisitor.Visit(ModelMetadata metadata, String key, Object model)
-           at Microsoft.AspNetCore.Mvc.ModelBinding.ObjectModelValidator.Validate(ActionContext actionContext, ValidationStateDictionary validationState, String prefix, Object model, ModelMetadata metadata, Object container)
-           at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.EnforceBindRequiredAndValidate(ObjectModelValidator baseObjectValidator, ActionContext actionContext, ParameterDescriptor parameter, ModelMetadata metadata, ModelBindingContext modelBindingContext, ModelBindingResult modelBindingResult, Object container)
-           at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.BindModelAsync(ActionContext actionContext, IModelBinder modelBinder, IValueProvider valueProvider, ParameterDescriptor parameter, ModelMetadata metadata, Object value, Object container)
-           at Microsoft.AspNetCore.Mvc.Controllers.ControllerBinderDelegateProvider.<>c__DisplayClass0_0.<<CreateBinderDelegate>g__Bind|0>d.MoveNext()
-        --- End of stack trace from previous location ---
-           at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-           at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-           at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
-           at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
-           at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
-           at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
-           at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
-           at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
-           at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
-  info: Microsoft.Hosting.Lifetime[0]
-        Application is shutting down...
-  info: Microsoft.Hosting.Lifetime[0]
-        Application started. Press Ctrl+C to shut down.
-  info: Microsoft.Hosting.Lifetime[0]
-        Hosting environment: Development
-  info: Microsoft.Hosting.Lifetime[0]
-        Content root path: /home/runner/work/rest-api-base/rest-api-base
-  info: Microsoft.Hosting.Lifetime[0]
-        Application is shutting down...
+[m/home/runner/work/rest-api-base/rest-api-base/tests/rest-api-base.Tests/bin/Release/net10.0/rest-api-base.Tests.dll (net10.0|x64) [32mpassed[m [90m(1s 010ms)[m
 
-[31mTest run summary: Failed!
+[32mTest run summary: Passed!
 [m  total: 4
-[31m  failed: 1
-[m  succeeded: 3
-  skipped: 0
-  duration: 1s 256ms
-Test run completed with non-success exit code: 2 (see: https://aka.ms/testingplatform/exitcodes)
+  failed: 0
+[32m  succeeded: 4
+[m  skipped: 0
+  duration: 1s 211ms
